@@ -4,7 +4,7 @@ import Spinner from '../layout/Spinner'
 import UserItem from './UserItem'
 
 
-const UserResult = () => {
+const UserResults = () => {
   const { users, isLoading } = useContext(GithubContext)
 
   if (!isLoading) {
@@ -20,4 +20,4 @@ const UserResult = () => {
   }
 };
 
-export default UserResult;
+export default UserResults;
