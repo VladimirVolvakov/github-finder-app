@@ -17,7 +17,8 @@ const githubReducers = (state, action) => {
                 ...state,
                 isLoading: true
             }
-        default: return state
+        default: 
+            return state
     }
 }
 
