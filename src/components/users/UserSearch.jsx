@@ -6,7 +6,7 @@ import GithubContext from '../../context/github/GithubContext'
 const UserSearch = () => {
     const [text, setText] = useState('')
 
-    const { users, dispatch, clearUsers } = useContext(GithubContext)
+    const { users, dispatch } = useContext(GithubContext)
 
     const { setAlert } = useContext(AlertContext)
 
@@ -60,7 +60,7 @@ const UserSearch = () => {
                 <div>
                     <button 
                         className='btn btn-ghost btn-lg'
-                        onClick={clearUsers}
+                        onClick={ () => dispatch({ type: 'CLEAR_USERS' }) }
                     >
                         Clear
                     </button>
