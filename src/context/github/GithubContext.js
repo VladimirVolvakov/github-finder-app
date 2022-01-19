@@ -1,5 +1,4 @@
 import { createContext, useReducer } from 'react'
-import { createRoutesFromChildren } from 'react-router-dom'
 import githubReducers from './GithubReducers'
 
 const GithubContext = createContext()
