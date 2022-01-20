@@ -1,5 +1,5 @@
 import { FaCodepen, FaStore, FaUserFriends, FaUsers } from 'react-icons/fa'
-import { getUser, getUserRepos } from '../context/github/GithubActions'
+import { getUserInfo } from '../context/github/GithubActions'
 import { Link } from 'react-router-dom'
 import { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
@@ -15,11 +15,8 @@ const User = () => {
     useEffect(() => {
         dispatch({ type: 'SET_ISLOADING' })
         const getUserData = async () => {
-            const userData = await getUser(params.login)
-            dispatch({ type: 'GET_USER', payload: userData })
-
-            const userRepoData = await getUserRepos(params.login)
-            dispatch({ type: 'GET_REPOS', payload: userRepoData })
+            const userData = await getUserInfo(params.login)
+            dispatch({ type: 'GET_USER_INFO', payload: userData })
         }
 
         getUserData()
